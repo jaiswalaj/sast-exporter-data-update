@@ -1,0 +1,17 @@
+2025-03-28 11:43:56,560 - INFO - ==== JSON Updater Started ====
+2025-03-28 11:43:56,560 - INFO - JSON input file       : C:\Users\AyushJ\AppData\Local\Temp\cxsast_exporter1176783385\teams.json
+2025-03-28 11:43:56,560 - INFO - JSON key to update    : 'name'
+2025-03-28 11:43:56,560 - INFO - Excel mapping file    : C:\Users\AyushJ\AppData\Local\Temp\cxsast_exporter1176783385\ProjectDetails_2.xlsx
+2025-03-28 11:43:56,560 - INFO - Old column in Excel   : 'Old Team Name'
+2025-03-28 11:43:56,560 - INFO - New column in Excel   : 'New Team Name'
+2025-03-28 11:43:56,560 - INFO - JSON output file      : C:\Users\AyushJ\AppData\Local\Temp\cxsast_exporter1176783385\teams_updated_2.json
+2025-03-28 11:43:56,560 - INFO - Loading Excel mapping...
+2025-03-28 11:43:56,690 - INFO - Successfully loaded 4 mappings from Excel.
+2025-03-28 11:43:56,691 - INFO - Loading JSON file...
+2025-03-28 11:43:56,691 - INFO - Successfully loaded 4 records from JSON.
+2025-03-28 11:43:56,691 - INFO - Processing JSON data...
+2025-03-28 11:43:56,691 - INFO - Total records skipped or removed: 2
+2025-03-28 11:43:56,691 - INFO - Retained 2 records after processing.
+2025-03-28 11:43:56,691 - INFO - Saving updated JSON file...
+2025-03-28 11:43:56,691 - INFO - Updated JSON saved successfully to 'C:\Users\AyushJ\AppData\Local\Temp\cxsast_exporter1176783385\teams_updated_2.json'
+2025-03-28 11:43:56,691 - INFO - ==== JSON Updater Completed Successfully ====

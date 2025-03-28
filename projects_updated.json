@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "teamId": 1,
+    "name": "NEWbWapp",
+    "isPublic": true,
+    "presetId": 1,
+    "createdDate": "2024-11-05T13:01:31.2366667+05:30",
+    "configuration": {
+      "customFields": []
+    }
+  },
+  {
+    "id": 2,
+    "teamId": 5,
+    "name": "NEWcxflow_test-master",
+    "isPublic": true,
+    "presetId": 36,
+    "createdDate": "2025-02-07T06:05:40.9033333+05:30",
+    "configuration": {
+      "customFields": []
+    }
+  },
+  {
+    "id": 4,
+    "teamId": 1,
+    "name": "NEWWWWTEST-webgoat-main",
+    "isPublic": true,
+    "presetId": 36,
+    "createdDate": "2025-02-20T16:17:21.1366667+05:30",
+    "configuration": {
+      "customFields": []
+    }
+  },
+  {
+    "id": 6,
+    "teamId": 1,
+    "name": "NEWWWWWWWWWdummy2-main",
+    "isPublic": true,
+    "presetId": 36,
+    "createdDate": "2025-02-24T11:33:38.9866667+05:30",
+    "configuration": {
+      "customFields": []
+    }
+  },
+  {
+    "id": 7,
+    "teamId": 1,
+    "name": "NEWWWNEWTEST-dummy2-main",
+    "isPublic": true,
+    "presetId": 36,
+    "createdDate": "2025-02-24T12:02:51.4766667+05:30",
+    "configuration": {
+      "customFields": []
+    }
+  }
+]
