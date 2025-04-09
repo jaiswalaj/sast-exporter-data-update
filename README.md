@@ -24,12 +24,11 @@ You have JSON files exported from SAST Exporter tool of Checkmarx and need to up
 
 - Python 3.7+
 - `pandas`
-- `openpyxl`
 
 Install dependencies:
 
 ```bash
-pip install pandas openpyxl
+pip install pandas
 ```
 
 ---
