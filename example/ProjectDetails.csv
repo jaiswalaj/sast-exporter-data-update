@@ -1,0 +1,9 @@
+﻿Old Team Name,New Team Name,Old Project Name,New Project Name
+CxServer,CxServer_NEW,bWapp,NEWbWapp
+CxServer_Checkmarx,,cxflow_test-master,NEWcxflow_test-master
+CxServer_Checkmarx_CxFlow,CxServer_Checkmarx_CxFlow_NEWWW,webgoat-main,
+CxServer_Checkmarx_CxFlow_jaiswalaj,,TEST-webgoat-main,NEWWWWTEST-webgoat-main
+,,dummy-main,
+,,dummy2-main,NEWWWWWWWWWdummy2-main
+,,NEWTEST-dummy2-main,NEWWWNEWTEST-dummy2-main
+,,testttt,

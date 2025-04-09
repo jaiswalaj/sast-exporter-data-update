@@ -19,18 +19,20 @@ def setup_logging():
     )
 
 
-def load_excel_mapping(file_path: str, old_col: str, new_col: str) -> Dict[str, str]:
-    """Loads mapping of old values to new values from Excel."""
+def load_csv_mapping(file_path: str, old_col: str, new_col: str) -> Dict[str, str]:
+    """Loads mapping of old values to new values from CSV file."""
     try:
         path = Path(file_path)
         if not path.exists():
-            logging.error(f"Excel file not found: '{file_path}'")
+            logging.error(f"CSV file not found: '{file_path}'")
             sys.exit(1)
 
-        df = pd.read_excel(file_path, usecols=[old_col, new_col], engine='openpyxl')
+        # df = pd.read_excel(file_path, usecols=[old_col, new_col], engine='openpyxl')
+        df = pd.read_csv(file_path, usecols=[old_col, new_col])
+
 
         if old_col not in df.columns or new_col not in df.columns:
-            logging.error(f"Required columns '{old_col}' or '{new_col}' not found in Excel file '{file_path}'.")
+            logging.error(f"Required columns '{old_col}' or '{new_col}' not found in CSV file '{file_path}'.")
             sys.exit(1)
 
         df.dropna(subset=[old_col], inplace=True)
@@ -39,10 +41,10 @@ def load_excel_mapping(file_path: str, old_col: str, new_col: str) -> Dict[str, 
         return mapping
 
     except ValueError as ve:
-        logging.error(f"Error reading Excel file '{file_path}': {ve}")
+        logging.error(f"Error reading CSV file '{file_path}': {ve}")
         sys.exit(1)
     except Exception as e:
-        logging.exception(f"Unexpected error while loading Excel mapping from '{file_path}': {e}")
+        logging.exception(f"Unexpected error while loading CSV mapping from '{file_path}': {e}")
         sys.exit(1)
 
 
@@ -120,13 +122,13 @@ def process_json_data(
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Update JSON values based on Excel mapping.")
+    parser = argparse.ArgumentParser(description="Update JSON values based on CSV mapping.")
     parser.add_argument("--json_input_path", required=True, help="Path to input JSON file")
     parser.add_argument("--json_key_name", required=True, help="Key name in JSON to update")
     parser.add_argument("--json_output_path", required=True, help="Path to save updated JSON")
-    parser.add_argument("--excel_path", required=True, help="Path to Excel file with mapping")
-    parser.add_argument("--old_data_col_name", required=True, help="Column name for old data in Excel")
-    parser.add_argument("--new_data_col_name", required=True, help="Column name for new data in Excel")
+    parser.add_argument("--csv_path", required=True, help="Path to CSV file with mapping")
+    parser.add_argument("--old_data_col_name", required=True, help="Column name for old data in CSV")
+    parser.add_argument("--new_data_col_name", required=True, help="Column name for new data in CSV")
     return parser.parse_args()
 
 
@@ -137,15 +139,15 @@ def main():
     logging.info("==== JSON Updater Started ====")
     logging.info(f"JSON input file       : {args.json_input_path}")
     logging.info(f"JSON key to update    : '{args.json_key_name}'")
-    logging.info(f"Excel mapping file    : {args.excel_path}")
-    logging.info(f"Old column in Excel   : '{args.old_data_col_name}'")
-    logging.info(f"New column in Excel   : '{args.new_data_col_name}'")
+    logging.info(f"CSV mapping file    : {args.csv_path}")
+    logging.info(f"Old column in CSV   : '{args.old_data_col_name}'")
+    logging.info(f"New column in CSV   : '{args.new_data_col_name}'")
     logging.info(f"JSON output file      : {args.json_output_path}")
 
     try:
-        logging.info("Loading Excel mapping...")
-        value_mapping = load_excel_mapping(args.excel_path, args.old_data_col_name, args.new_data_col_name)
-        logging.info(f"Successfully loaded {len(value_mapping)} mappings from Excel.")
+        logging.info("Loading CSV mapping...")
+        value_mapping = load_csv_mapping(args.csv_path, args.old_data_col_name, args.new_data_col_name)
+        logging.info(f"Successfully loaded {len(value_mapping)} mappings from CSV.")
 
         logging.info("Loading JSON file...")
         json_data = load_json(args.json_input_path)
